@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Builder;
 trait Sortable
 {
     /**
+     * Set the order attribute on the model.
+     *
+     * @param int $value
+     */
+    public function setOrder($value)
+    {
+        $key = $this->determineOrderColumnName();
+        $this->attributes[$key] = $value;
+    }
+ 
+    /**
      * Modify the order column value
      *
      * @param $model
@@ -74,7 +85,7 @@ trait Sortable
         foreach($ids as $id)
         {
             $model = self::find($id);
-            $model->order_column = $newOrder++;
+            $model->setOrder($newOrder++);
             $model->save();
         }
     }
