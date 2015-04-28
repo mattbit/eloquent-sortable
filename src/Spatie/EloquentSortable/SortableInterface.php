@@ -1,6 +1,6 @@
 <?php namespace Spatie\EloquentSortable;
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 interface SortableInterface {
     /**

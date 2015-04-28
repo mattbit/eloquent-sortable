@@ -1,7 +1,7 @@
 <?php
 namespace Spatie\EloquentSortable;
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 trait Sortable
 {
